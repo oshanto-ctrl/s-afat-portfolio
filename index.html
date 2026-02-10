@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammad Shafiqur Rahman</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="src/assets/images/favicon.ico" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Mohammad Shafiqur Rahman, a creative UI/UX designer specializing in user-centered digital experiences, web design, and branding." />
+    <meta name="keywords" content="UI designer, UX designer, Mohammad Shafiqur Rahman, portfolio, web design, user experience, user interface, branding, creative designer" />
+    <meta name="author" content="Mohammad Shafiqur Rahman" />
+    <meta property="og:title" content="Mohammad Shafiqur Rahman – UI/UX Designer" />
+    <meta property="og:description" content="Explore the portfolio and works of Mohammad Shafiqur Rahman, a passionate UI/UX designer." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="src/assets/images/og-image.jpg" />
+    <!-- <meta property="og:url" content="https://your-portfolio-url.com/" /> -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mohammad Shafiqur Rahman – UI/UX Designer" />
+    <meta name="twitter:description" content="Portfolio of Mohammad Shafiqur Rahman, creative UI/UX designer." />
+    <meta name="twitter:image" content="src/assets/images/og-image.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              "brand-green": "#00FF00",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="src/assets/styles.css" />
+  </head>
+  <body class="font-poppins bg-white">
+    <div id="app">
+      <!-- Loading state while Vue initializes -->
+      <div class="flex items-center justify-center min-h-screen">
+        <div class="text-center">
+          <div class="spinner mx-auto mb-4"></div>
+          <p class="text-gray-600">Awesomeness Loading...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Load all component files in order -->
+    <script src="src/components/NavigationComponent.js"></script>
+    <script src="src/components/HeroSection.js"></script>
+    <script src="src/components/ExperienceSection.js"></script>
+    <script src="src/components/AboutSection.js"></script>
+    <script src="src/components/ProjectsSection.js"></script>
+    <script src="src/components/TestimonialsSection.js"></script>
+    <script src="src/components/ContactSection.js"></script>
+    <script src="src/components/FooterComponent.js"></script>
+    <script src="src/components/ScrollToTop.js"></script>
+
+    <!-- Main App - Load last -->
+    <script src="src/main.js"></script>
+  </body>
+</html>
