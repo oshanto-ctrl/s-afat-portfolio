@@ -10,7 +10,7 @@ const NavigationComponent = {
                 <div class="flex items-center justify-between h-20">
                     <!-- Signature Logo -->
                     <a href="#home" @click.prevent="scrollToSection('home')" class="flex items-center">
-                        <img src="/src/assets/images/nav_logo.JPG" alt="Shafiqur Signature" class="h-12 w-auto">
+                        <img src="src/assets/images/nav_logo.JPG" alt="Shafiqur Signature" class="h-12 w-auto">
                     </a>
                     
                     <!-- Desktop Navigation (Centered) -->

@@ -79,7 +79,7 @@ const ProjectsSection = {
           title: "krea8.studio clone",
           description:
             "This project is a sample landing page that we used to develop a descriptive product showcase to create awareness to the end users. This was also to show the process of development of Figma to final functional product using React with TailwindCSS, Express.js, NodeJs along with responsive design making sure the product is scalable or extendable. This project also shows various aspects and stages that goes through product development.",
-          image: "/src/assets/images/project_1.jpg",
+          image: "src/assets/images/project_1.jpg",
           link: "#",
           imageRight: false,
         },
@@ -87,7 +87,7 @@ const ProjectsSection = {
           title: "Parenting & Milestone Tracker App",
           description:
             "This project is a family friendly application that is developed to a scientific approach in which users can track their kid's growth and development, store memories, along with receiving guidance through stages that the kid goes through. It's designed to bring families closer together through the use of digital transformation.",
-          image: "/src/assets/images/project_2.jpg",
+          image: "src/assets/images/project_2.jpg",
           link: "#",
           imageRight: true,
         },
@@ -95,7 +95,7 @@ const ProjectsSection = {
           title: "Task & Project Management Dashboard UI",
           description:
             "This project is a task driven and project collaborative dashboard design to help users to organize and share tasks with their team or collaborators in an efficient manner. The emphasis was placed on the simple presentation and effective navigation to work as simple as possible. This approach also supports the users in both team and individual settings.",
-          image: "/src/assets/images/project_3.jpg",
+          image: "src/assets/images/project_3.jpg",
           link: "#",
           imageRight: false,
         },

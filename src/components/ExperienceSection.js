@@ -55,7 +55,7 @@ const ExperienceSection = {
     return {
       experiences: [
         {
-          logo: "/src/assets/images/acote.png",
+          logo: "src/assets/images/acote.png",
           title: "Senior Associate Quality Assurance at Acote Group",
           company: "Acote Group",
           period: "Sept 2025- Jan 2026",
@@ -63,7 +63,7 @@ const ExperienceSection = {
             "As a Senior Associate, I ensured 98%+ accuracy in QA checks across large-scale AI/ML datasets while implementing process improvements that reduced annotation errors by 15% and increased overall team efficiency. I mentored and trained over 8 junior associates to maintain consistent performance and collaborated closely with clients on project documentation and progress reporting to support smooth project delivery.",
         },
         {
-          logo: "/src/assets/images/acote.png",
+          logo: "src/assets/images/acote.png",
           title: "Associate Quality Assurance at Acote Group",
           company: "Acote Group",
           period: "Nov 2024 - Aug 2025",
@@ -71,7 +71,7 @@ const ExperienceSection = {
             "As an Associate Quality Assurance, I consistently delivered dailty and weekly targets of 100+ items per day with high accuracy, identified and reported over 50 usability and data inconsistencies each month, and improved overall team efficeiency by 12% through process optimization.",
         },
         {
-          logo: "/src/assets/images/acote.png",
+          logo: "src/assets/images/acote.png",
           title: "Associate at Acote Group",
           company: "Acote Group",
           period: "Aug 2024 - Oct 2024",
@@ -79,7 +79,7 @@ const ExperienceSection = {
             "As an Associate I performed high-quality data and images annotation in alighment with project requirements while collaborating with team members to improve annotation processes and overall efficiency.",
         },
         {
-          logo: "/src/assets/images/a1qa-logo.svg",
+          logo: "src/assets/images/a1qa-logo.svg",
           title: "QA Intern - Functional Testing at A1QA",
           company: "A1QA",
           period: "Oct 2023",

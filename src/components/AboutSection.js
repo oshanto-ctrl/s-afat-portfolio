@@ -17,7 +17,7 @@ const AboutSection = {
                         <div class="relative group w-80 lg:w-5/6">
                             <div class="w-full h-full rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
                                 <img 
-                                    src="/src/assets/images/about_me_logo.JPG" 
+                                    src="src/assets/images/about_me_logo.JPG" 
                                     alt="Mohammad Shafiqur Rahman" 
                                     class="w-full h-full object-cover"
                                 >
