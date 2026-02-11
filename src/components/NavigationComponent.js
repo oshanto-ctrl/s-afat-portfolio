@@ -31,7 +31,7 @@ const NavigationComponent = {
                                         
                                         <!-- Resume Button with Animation -->
                                         <a 
-                                                href="/path/to/your-resume.pdf" 
+                                                href="#" 
                                                 download
                                                 class="hidden md:flex items-center bg-black text-white px-6 py-2.5 rounded text-sm font-medium transition-all duration-300 hover:bg-white hover:text-black hover:shadow-lg hover:scale-105 hover:border-2 hover:border-black"
                                         >
