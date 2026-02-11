@@ -76,7 +76,7 @@ const NavigationComponent = {
                                                         {{ item.label }}
                                                 </a>
                                                 <a 
-                                                        href="/path/to/your-resume.pdf" 
+                                                        href="#" 
                                                         download
                                                         class="mobile-nav-item btn-primary bg-brand-green text-black px-8 py-3 rounded text-lg font-medium mt-4 flex items-center transition-all duration-200 hover:bg-green-400 hover:shadow-lg hover:scale-105"
                                                 >
