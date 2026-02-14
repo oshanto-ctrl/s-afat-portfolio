@@ -364,3 +364,135 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+
+
+
+/* Professional About Me Section - Animations & Transitions */
+/* Professional Capability Cards */
+.capability-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.capability-card:nth-child(1) { animation-delay: 0.1s; }
+.capability-card:nth-child(2) { animation-delay: 0.2s; }
+.capability-card:nth-child(3) { animation-delay: 0.3s; }
+.capability-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+/* Enhanced Button Animations */
+a[href="#contact"],
+a[href="#portfolio"] {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a[href="#contact"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+a[href="#contact"]:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Adjustments */
+
+
+@media (max-width: 768px) {
+    .capability-card {
+        padding: 1rem;
+        min-height: 140px;
+    }
+    
+    .capability-card h5 {
+        font-size: 0.9rem;
+    }
+    
+    .capability-card p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .capability-card {
+        min-height: 160px;
+    }
+    
+    /* Ensure full width buttons on mobile */
+    .lg\\:hidden .flex.flex-col.gap-3 a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Performance Optimization */
+.capability-card {
+    will-change: transform, opacity;
+}
+
+/* After animations complete, remove will-change */
+.capability-card.visible {
+    will-change: auto;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading state for images */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-up,
+    .capability-card,
+    a[href="#contact"],
+    a[href="#portfolio"] {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus states for accessibility */
+.capability-card:focus-within{
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}

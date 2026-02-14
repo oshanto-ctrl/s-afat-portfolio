@@ -1,67 +1,213 @@
-// About Me Section Component
+// Professional About Me Section Component with Enhanced Skills Showcase
 
 const AboutSection = {
+    
     name: 'AboutSection',
+
+    data() {
+        return {
+            capabilities: [
+                {
+                    title: 'User-Centered Design',
+                    description: 'Deep user research and empathy-driven design processes that put your audience first'
+                },
+                {
+                    title: 'Quality Assurance Mindset',
+                    description: 'Proactive problem identification with meticulous attention to detail and usability'
+                },
+                {
+                    title: 'Iterative Excellence',
+                    description: 'Continuous refinement through testing, feedback, and data-driven improvements'
+                },
+                {
+                    title: 'Strategic Solutions',
+                    description: 'Business-focused design that drives engagement and achieves measurable results'
+                }
+            ]
+        }
+    },
     
     template: `
-        <section id="about" class="py-20 px-6 lg:px-12 bg-white">
+        <section id="about" class="py-20 px-6 lg:px-12 bg-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto">
                 <!-- Section Title -->
                 <h2 class="text-3xl lg:text-4xl text-center mb-16 fade-in-up">
                     <span class="font-light">About</span> <span class="font-bold">Me</span>
                 </h2>
                 
-                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <!-- Mobile Layout: Image First -->
+                <div class="lg:hidden fade-in-up">
                     <!-- Profile Image -->
-                    <div class="fade-in-up flex justify-center lg:justify-start">
-                        <div class="relative group w-80 lg:w-5/6">
-                            <div class="w-full h-full rounded-xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
+                    <div class="flex justify-center mb-10">
+                        <div class="relative group w-full max-w-md mx-auto">
+                            <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02]">
                                 <img 
                                     src="src/assets/images/about_me_logo.JPG" 
-                                    alt="Mohammad Shafiqur Rahman" 
+                                    alt="Mohammad Shafiqur Rahman - UI/UX Designer" 
                                     class="w-full h-full object-cover"
                                 >
                             </div>
                             <!-- Decorative element -->
-                            <div class="absolute -bottom-4 -right-6 w-36 h-36 bg-black/10 rounded-xl -z-10 transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
+                            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-black/5 rounded-2xl -z-10 transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Layout: Side by Side -->
+                <div class="hidden lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
+                    <!-- Left Column: Profile Image and Skills Grid -->
+                    <div class="fade-in-up">
+                        <!-- Profile Image -->
+                        <div class="flex justify-center lg:justify-start mb-10">
+                            <div class="relative group w-full max-w-lg">
+                                <div class="w-full aspect-square rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-[1.02]">
+                                    <img 
+                                        src="src/assets/images/about_me_logo.JPG" 
+                                        alt="Mohammad Shafiqur Rahman - UI/UX Designer" 
+                                        class="w-full h-full object-cover"
+                                    >
+                                </div>
+                                <!-- Decorative element -->
+                                <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-black/5 rounded-2xl -z-10 transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- About Content -->
+                    <!-- Right Column: About Content -->
                     <div class="fade-in-up stagger-2">
-                        <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
-                            <p>
-                                I'm a <span class="font-semibold text-black">UI/UX Designer</span> passionate about creating 
-                                meaningful digital experiences that bridge the gap between aesthetics and functionality.
-                            </p>
-                            
-                            <p>
-                                My background in Quality Assurance has given me a unique perspective on user-centric design, 
-                                enabling me to anticipate user needs and identify potential interface challenges before they become issues.
-                            </p>
-                            
-                            <p>
-                                I specialize in <span class="font-medium text-black">user-centered design thinking</span>, 
-                                creating intuitive interfaces that not only look beautiful but also solve real problems. 
-                                My approach combines research, empathy, and iterative testing to deliver products that users love.
-                            </p>
-                            
-                            <p>
-                                For me, design is more than just making things look good—it's about creating solutions that 
-                                make people's lives easier and more enjoyable.
+                        <!-- Introduction -->
+                        <div class="mb-10">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-black mb-4 leading-tight">
+                                UI/UX Designer<br>
+                                <span class="font-light">Creating Meaningful Digital Experiences</span>
+                            </h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                I bridge aesthetics and functionality to deliver solutions that make people's lives 
+                                easier and more enjoyable. Let's create something exceptional together.
                             </p>
                         </div>
                         
-                        <!-- CTA Button -->
-                        <div class="mt-8">
+                        <!-- What I Deliver -->
+                        <div class="mb-10">
+                            <h4 class="text-sm font-semibold text-black uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <span class="w-8 h-0.5 bg-black"></span>
+                                What I Deliver
+                            </h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div 
+                                    v-for="(capability, index) in capabilities" 
+                                    :key="index"
+                                    class="capability-card group relative bg-white border-2 border-gray-100 rounded-xl p-5 hover:border-black transition-all duration-300"
+                                    :style="{ animationDelay: (index * 0.1) + 's' }"
+                                >
+                                    <div class="absolute top-4 right-4 w-8 h-8 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <h5 class="font-bold text-black mb-2 text-base pr-8">{{ capability.title }}</h5>
+                                    <p class="text-sm text-gray-600 leading-relaxed">{{ capability.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="flex gap-4">
                             <a 
                                 href="#contact" 
-                                class="inline-flex items-center bg-black text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-gray-800 hover:shadow-lg hover:scale-105"
+                                class="group relative inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105 active:scale-95"
                             >
-                                Let's Work Together
-                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
+                                <span class="relative z-10 flex items-center gap-2">
+                                    Let's Work Together
+                                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                            
+                            <a 
+                                href="#portfolio" 
+                                class="group inline-flex items-center justify-center border-2 border-black text-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-black hover:text-white hover:shadow-xl hover:scale-105 active:scale-95"
+                            >
+                                <span class="flex items-center gap-2">
+                                    View My Work
+                                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout: Content Section -->
+                <div class="lg:hidden">
+                    <!-- About Content -->
+                    <div class="fade-in-up stagger-2">
+                        <!-- Introduction -->
+                        <div class="mb-10">
+                            <h3 class="text-2xl lg:text-3xl font-bold text-black mb-4 leading-tight">
+                                UI/UX Designer<br>
+                                <span class="font-light">Creating Meaningful Digital Experiences</span>
+                            </h3>
+                            <p class="text-gray-600 text-lg leading-relaxed">
+                                I bridge aesthetics and functionality to deliver solutions that make people's lives 
+                                easier and more enjoyable. Let's create something exceptional together.
+                            </p>
+                        </div>
+                        
+                        <!-- What I Deliver -->
+                        <div class="mb-10">
+                            <h4 class="text-sm font-semibold text-black uppercase tracking-wider mb-6 flex items-center gap-2">
+                                <span class="w-8 h-0.5 bg-black"></span>
+                                What I Deliver
+                            </h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div 
+                                    v-for="(capability, index) in capabilities" 
+                                    :key="index"
+                                    class="capability-card group relative bg-white border-2 border-gray-100 rounded-xl p-5 hover:border-black transition-all duration-300"
+                                    :style="{ animationDelay: (index * 0.1) + 's' }"
+                                >
+                                    <div class="absolute top-4 right-4 w-8 h-8 bg-black rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                    </div>
+                                    <h5 class="font-bold text-black mb-2 text-base pr-8">{{ capability.title }}</h5>
+                                    <p class="text-sm text-gray-600 leading-relaxed">{{ capability.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        <!-- Mobile CTA Buttons -->
+                        <div class="flex flex-col gap-3">
+                            <a 
+                                href="#contact" 
+                                class="group relative inline-flex items-center justify-center bg-black text-white px-8 py-4 rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] active:scale-95 w-full"
+                            >
+                                <span class="relative z-10 flex items-center gap-2 justify-center">
+                                    Let's Work Together
+                                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
+                                <div class="absolute inset-0 bg-gradient-to-r from-gray-800 to-black opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            </a>
+                            
+                            <a 
+                                href="#portfolio" 
+                                class="group inline-flex items-center justify-center border-2 border-black text-black px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:bg-black hover:text-white hover:shadow-xl hover:scale-[1.02] active:scale-95 w-full"
+                            >
+                                <span class="flex items-center gap-2 justify-center">
+                                    View My Work
+                                    <svg class="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                    </svg>
+                                </span>
                             </a>
                         </div>
                     </div>
@@ -81,7 +227,7 @@ const AboutSection = {
     
     methods: {
         animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in-up');
+            const elements = document.querySelectorAll('.fade-in-up, .capability-card, .skill-card-mobile, .skill-card-desktop');
             const windowHeight = window.innerHeight;
             
             elements.forEach(element => {
