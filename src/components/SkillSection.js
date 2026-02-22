@@ -1,7 +1,7 @@
 const SkillSection = {
     name: 'SkillSection',
     template: `
-        <section class="ss-section fade-in">
+        <section id="skills" class="ss-section fade-in">
         <!-- Section Title -->
                 <h2 class="text-3xl lg:text-4xl text-center mb-16 fade-in-up">
                     <span class="font-light">My</span> <span class="font-bold">Skills</span>
