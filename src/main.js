@@ -15,6 +15,7 @@ const App = {
         <div class="app">
             <navigation-component></navigation-component>
             <hero-section></hero-section>
+            <skill-section></skill-section>
             <experience-section></experience-section>
             <about-section></about-section>
             <projects-section></projects-section>
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     typeof NavigationComponent !== "undefined" &&
     typeof HeroSection !== "undefined" &&
+    typeof SkillSection !== "undefined" &&
     typeof ExperienceSection !== "undefined" &&
     typeof AboutSection !== "undefined" &&
     typeof ProjectsSection !== "undefined" &&
@@ -50,6 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Register all components
     app.component("navigation-component", NavigationComponent);
     app.component("hero-section", HeroSection);
+    app.component("skill-section", SkillSection);
     app.component("experience-section", ExperienceSection);
     app.component("about-section", AboutSection);
     app.component("projects-section", ProjectsSection);
