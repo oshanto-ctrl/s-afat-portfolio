@@ -1,4 +1,4 @@
-// Professional About Me Section Component with Enhanced Skills Showcase
+// Professional About Me Section Component
 
 const AboutSection = {
     
@@ -23,16 +23,6 @@ const AboutSection = {
                     title: 'Strategic Solutions',
                     description: 'Business-focused design that drives engagement and achieves measurable results'
                 }
-            ],
-            skills: [
-                { icon: 'src/assets/images/skills/figma.svg' },
-                { icon: 'src/assets/images/skills/sketch.svg' },
-                { icon: 'src/assets/images/skills/protopie.svg' },
-                { icon: 'src/assets/images/skills/framer.svg' },
-                { icon: 'src/assets/images/skills/adobe-xd.svg' },
-                { icon: 'src/assets/images/skills/dribbble.svg' },
-                { icon: 'src/assets/images/skills/illustrator.svg' },
-                { icon: 'src/assets/images/skills/photoshop.svg' }
             ]
         }
     },
@@ -61,29 +51,11 @@ const AboutSection = {
                             <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-black/5 rounded-2xl -z-10 transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
                         </div>
                     </div>
-                    
-                    <!-- Mobile Skills Carousel -->
-                    <div class="mb-8 overflow-hidden">
-                        <div class="flex animate-scroll">
-                            <!-- First set of skills -->
-                            <div v-for="(skill, index) in skills" :key="index" class="flex-shrink-0 w-16 h-16 mx-2 skill-card-mobile">
-                                <div class="w-full h-full rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-110">
-                                    <img :src="skill.icon" :alt="'Skill ' + (index + 1)" class="w-full h-full object-contain p-1.5 bg-gray-100">
-                                </div>
-                            </div>
-                            <!-- Duplicate set for infinite scroll -->
-                            <div v-for="(skill, index) in skills" :key="'duplicate-' + index" class="flex-shrink-0 w-16 h-16 mx-2 skill-card-mobile">
-                                <div class="w-full h-full rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 transform hover:scale-110">
-                                    <img :src="skill.icon" :alt="'Skill ' + (index + 1)" class="w-full h-full object-contain p-1.5 bg-gray-100">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Desktop Layout: Side by Side -->
                 <div class="hidden lg:grid lg:grid-cols-2 gap-12 lg:gap-16 items-start relative">
-                    <!-- Left Column: Profile Image and Skills Grid -->
+                    <!-- Left Column: Profile Image -->
                     <div class="fade-in-up">
                         <!-- Profile Image -->
                         <div class="flex justify-center lg:justify-start mb-8">
@@ -97,15 +69,6 @@ const AboutSection = {
                                 </div>
                                 <!-- Decorative element -->
                                 <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-black/5 rounded-2xl -z-10 transform rotate-6 transition-transform duration-500 group-hover:rotate-12"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Desktop Skills Grid -->
-                        <div class="grid grid-cols-4 gap-3 mb-4 max-w-sm mx-auto lg:mx-0">
-                            <div v-for="(skill, index) in skills" :key="index" class="skill-card-desktop">
-                                <div class="aspect-square rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 bg-gray-100 p-1.5">
-                                    <img :src="skill.icon" :alt="'Skill ' + (index + 1)" class="w-full h-full object-contain">
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -254,56 +217,21 @@ const AboutSection = {
     mounted() {
         this.animateOnScroll();
         window.addEventListener('scroll', this.animateOnScroll);
-        
-        // Add custom styles for infinite carousel
+
+        // Add custom styles for animations
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes scroll {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(-50%); }
-            }
-            
-            .animate-scroll {
-                animation: scroll 10s linear infinite;
-            }
-            
-            .animate-scroll:hover {
-                animation-play-state: paused;
-            }
-            
-            .skill-card-desktop {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 0.6s ease;
-            }
-            
-            .skill-card-desktop.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .skill-card-mobile {
-                opacity: 0;
-                transform: translateX(-20px);
-                transition: all 0.6s ease;
-            }
-            
-            .skill-card-mobile.visible {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            
             .fade-in-up {
                 opacity: 0;
                 transform: translateY(30px);
                 transition: all 0.8s ease;
             }
-            
+
             .fade-in-up.visible {
                 opacity: 1;
                 transform: translateY(0);
             }
-            
+
             .stagger-2 {
                 transition-delay: 0.2s;
             }
@@ -317,12 +245,12 @@ const AboutSection = {
     
     methods: {
         animateOnScroll() {
-            const elements = document.querySelectorAll('.fade-in-up, .capability-card, .skill-card-mobile, .skill-card-desktop');
+            const elements = document.querySelectorAll('.fade-in-up, .capability-card');
             const windowHeight = window.innerHeight;
-            
+
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
-                
+
                 if (elementTop < windowHeight - 100) {
                     element.classList.add('visible');
                 }
