@@ -65,8 +65,8 @@ const SkillSection = {
         return {
             skills: [
                 // Updated paths to include 'src/' prefix for correct relative path from index.html
-                { id: 1,  name: 'figma', icon: 'src/assets/images/skills/figma.svg',        inverted: true  },
-                { id: 2,  name: 'adobexd', icon: 'src/assets/images/skills/adobe-xd.svg',        inverted: false },
+                { id: 1,  name: 'figma', icon: 'src/assets/images/skills/figma.svg',        inverted: false  },
+                { id: 2,  name: 'adobexd', icon: 'src/assets/images/skills/adobe-xd.svg',        inverted: true },
                 { id: 3,  name: 'dribbble',     icon: 'src/assets/images/skills/dribbble.svg',       inverted: false },
                 { id: 4,  name: 'framer',  icon: 'src/assets/images/skills/framer.svg',      inverted: false },
                 { id: 5,  name: 'illustrator',    icon: 'src/assets/images/skills/illustrator.svg',    inverted: false },
